@@ -5,14 +5,28 @@ using UnityEngine;
 public class BlockMover : MonoBehaviour
 {
     [SerializeField] private Transform currentBlock;
-    private Rigidbody currentBlockRB;
+    [SerializeField] private float horizontalSpeed = 2;
+    [SerializeField] private float fastVerticalSpeed = 10;
+    [SerializeField] private float normalVerticalSpeed = 1;
 
-    [SerializeField] private float moveSpeed = 2;
+
+    private Rigidbody currentBlockRB;
+    private float horizontalInput;
+
+    private bool moveFaster = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentBlock.GetComponent<Block>().BlockPlaced += BlockMover_BlockPlaced;
         currentBlockRB = currentBlock.GetComponent<Rigidbody>();
+    }
+
+    private void BlockMover_BlockPlaced()
+    {
+        currentBlock = null;
+
+        // Get next block from queue.
     }
 
     // Update is called once per frame
@@ -20,6 +34,31 @@ public class BlockMover : MonoBehaviour
     {
         if(currentBlock == null) { return; }
 
-        float horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        if(Input.GetAxisRaw("Vertical") < 0)
+        {
+            moveFaster = true;
+        }
+        else
+        {
+            moveFaster = false;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        float verticalSpeed = 0;
+
+        if(moveFaster)
+        {
+            verticalSpeed = fastVerticalSpeed;
+        }
+        else
+        {
+            verticalSpeed = normalVerticalSpeed;
+        }
+
+        // Add player input on x-axis
+        currentBlockRB.velocity = new Vector3(horizontalInput * horizontalSpeed, -verticalSpeed, currentBlockRB.velocity.z);
     }
 }
