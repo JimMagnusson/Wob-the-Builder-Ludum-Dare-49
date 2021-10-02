@@ -11,7 +11,7 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] GameObject blocksParent = null;
     [SerializeField] Transform blockSpawnPosition = null;
 
-    [SerializeField] float randomXMaxDiff = 2f;
+    [SerializeField] float randomXMaxDiff = 1f;
 
 
     public Block SpawnBlock(BlockType blockType)
@@ -21,26 +21,27 @@ public class BlockSpawner : MonoBehaviour
         GameObject blockGO = null;
 
         float randomDiff = Random.Range(-randomXMaxDiff, randomXMaxDiff);
+        Vector3 spawnpos = new Vector3(blockSpawnPosition.position.x + randomDiff, blockSpawnPosition.position.y, blockSpawnPosition.position.z);
 
         switch (blockType)
         {
             case BlockType.foundation:
                 if(foundationPrefab == null) { Debug.LogError("Foundation prefab not found"); }
-                blockGO = Instantiate(foundationPrefab, blockSpawnPosition.position, foundationPrefab.transform.rotation, blocksParent.transform);
+                blockGO = Instantiate(foundationPrefab, spawnpos, foundationPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found on Foundation prefab"); }
                 break;
 
             case BlockType.floor:
                 if (roofPrefab == null) { Debug.LogError("Roof prefab not found"); }
-                blockGO = Instantiate(floorPrefab, blockSpawnPosition.position, floorPrefab.transform.rotation, blocksParent.transform);
+                blockGO = Instantiate(floorPrefab, spawnpos, floorPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found on Floor prefab"); }
                 break;
 
             case BlockType.roof:
                 if (roofPrefab == null) { Debug.LogError("Roof prefab not found"); }
-                blockGO = Instantiate(roofPrefab, blockSpawnPosition.position, roofPrefab.transform.rotation, blocksParent.transform);
+                blockGO = Instantiate(roofPrefab, spawnpos, roofPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found on Foundation prefab"); }
                 break;
