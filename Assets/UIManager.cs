@@ -20,6 +20,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite floorIcon;
     [SerializeField] private Sprite foundationIcon;
 
+    [SerializeField] private Sprite testhouseFoundation;
+    [SerializeField] private Sprite testhouseFloor;
+    [SerializeField] private Sprite testhouseRoof;
+
+    [SerializeField] private Sprite greekFloorBig;
+    [SerializeField] private Sprite greekFloorBigAndWide;
+    [SerializeField] private Sprite greekFloorPillars;
+    [SerializeField] private Sprite greekFoundation;
+    [SerializeField] private Sprite greekRoof;
+    [SerializeField] private Sprite greekRoofTiny;
+
     [SerializeField] private TextMeshProUGUI blocksLeftText = null;
 
     private string timeToWinString;
@@ -72,17 +83,50 @@ public class UIManager : MonoBehaviour
             case BlockType.none:
                 blockUI.gameObject.SetActive(false);
                 break;
-            case BlockType.foundation:
+            case BlockType.testhouseFoundation:
                 blockUI.border.sprite = foundationBorder;
                 blockUI.levelIcon.sprite = foundationIcon;
+                //blockUI.levelIcon.image = testhouseFoundation;
                 break;
-            case BlockType.floor:
+            case BlockType.testhouseFloor:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = testhouseFloor;
                 break;
-            case BlockType.roof:
+            case BlockType.testHouseRoof:
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
+                //blockUI.levelIcon.image = testhouseRoof;
+                break;
+            case BlockType.greekFloorBig:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = greekFloorBig;
+                break;
+            case BlockType.greekFloorBigAndWide:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = greekFloorBigAndWide;
+                break;
+            case BlockType.greekFloorPillars:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = greekFloorPillars;
+                break;
+            case BlockType.greekFoundation:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                //blockUI.levelIcon.image = greekFoundation;
+                break;
+            case BlockType.greekRoof:
+                blockUI.border.sprite = roofBorder;
+                blockUI.levelIcon.sprite = roofIcon;
+                //blockUI.levelIcon.image = greekRoof;
+                break;
+            case BlockType.greekRoofTiny:
+                blockUI.border.sprite = roofBorder;
+                blockUI.levelIcon.sprite = roofIcon;
+                //blockUI.levelIcon.image = greekRoofTiny;
                 break;
         }
     }

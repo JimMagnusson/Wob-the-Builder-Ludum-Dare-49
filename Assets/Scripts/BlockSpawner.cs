@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject foundationPrefab = null;
-    [SerializeField] GameObject floorPrefab = null;
-    [SerializeField] GameObject roofPrefab = null;
+    [SerializeField] GameObject testhouseFoundationPrefab = null;
+    [SerializeField] GameObject testhouseFloorPrefab = null;
+    [SerializeField] GameObject testhouseRoofPrefab = null;
+
+    [SerializeField] GameObject greekFloorBigPrefab = null;
+    [SerializeField] GameObject greekFloorBigAndWidePrefab = null;
+    [SerializeField] GameObject greekFloorPillarsPrefab = null;
+    [SerializeField] GameObject greekFoundationPrefab = null;
+    [SerializeField] GameObject greekRoofPrefab = null;
+    [SerializeField] GameObject greekRoofTinyPrefab = null;
 
     [SerializeField] GameObject blocksParent = null;
     [SerializeField] Transform blockSpawnPosition = null;
@@ -25,26 +32,69 @@ public class BlockSpawner : MonoBehaviour
 
         switch (blockType)
         {
-            case BlockType.foundation:
-                if(foundationPrefab == null) { Debug.LogError("Foundation prefab not found"); }
-                blockGO = Instantiate(foundationPrefab, spawnpos, foundationPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testhouseFoundation:
+                if(testhouseFoundationPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFoundationPrefab, spawnpos, testhouseFoundationPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
-                if (block == null) { Debug.LogError("No Block component found on Foundation prefab"); }
+                if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
 
-            case BlockType.floor:
-                if (roofPrefab == null) { Debug.LogError("Roof prefab not found"); }
-                blockGO = Instantiate(floorPrefab, spawnpos, floorPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testhouseFloor:
+                if (testhouseFloorPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloorPrefab, spawnpos, testhouseFloorPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
-                if (block == null) { Debug.LogError("No Block component found on Floor prefab"); }
+                if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
 
-            case BlockType.roof:
-                if (roofPrefab == null) { Debug.LogError("Roof prefab not found"); }
-                blockGO = Instantiate(roofPrefab, spawnpos, roofPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testHouseRoof:
+                if (testhouseRoofPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseRoofPrefab, spawnpos, testhouseRoofPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
-                if (block == null) { Debug.LogError("No Block component found on Foundation prefab"); }
+                if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
+
+            case BlockType.greekFloorBig:
+                if (greekFloorBigPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekFloorBigPrefab, spawnpos, greekFloorBigPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.greekFloorBigAndWide:
+                if (greekFloorBigAndWidePrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekFloorBigAndWidePrefab, spawnpos, greekFloorBigAndWidePrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.greekFloorPillars:
+                if (greekFloorPillarsPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekFloorPillarsPrefab, spawnpos, greekFloorPillarsPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.greekFoundation:
+                if (greekFloorPillarsPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekFoundationPrefab, spawnpos, greekFoundationPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.greekRoof:
+                if (greekRoofPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekRoofPrefab, spawnpos, greekRoofPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.greekRoofTiny:
+                if (greekRoofTinyPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(greekRoofTinyPrefab, spawnpos, greekRoofTinyPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
             default:
                 Debug.LogError("No case for the block type: " + blockType);
                 break;

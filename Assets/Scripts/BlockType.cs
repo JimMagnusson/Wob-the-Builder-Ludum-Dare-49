@@ -5,7 +5,14 @@ using UnityEngine;
 public enum BlockType
 {
     none,
-    foundation,
-    floor,
-    roof
+    testhouseFoundation,
+    testhouseFloor,
+    testHouseRoof,
+
+    greekFloorBig,
+    greekFloorBigAndWide,
+    greekFloorPillars,
+    greekFoundation,
+    greekRoof,
+    greekRoofTiny
 }

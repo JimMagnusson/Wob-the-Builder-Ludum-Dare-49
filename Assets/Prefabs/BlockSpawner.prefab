@@ -74,9 +74,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d729f4b7b196334882c80dcab6bd03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foundationPrefab: {fileID: 5148905435645203370, guid: 106c58292705c8245ac4d764e7edf8a0, type: 3}
-  floorPrefab: {fileID: 5845792565941980255, guid: a4816a895bd78ac43a709753e722ced3, type: 3}
-  roofPrefab: {fileID: 7557362665463825653, guid: 36be3fd3949090842a80188b85e9cb26, type: 3}
+  testhouseFoundationPrefab: {fileID: 5148905435645203370, guid: 106c58292705c8245ac4d764e7edf8a0, type: 3}
+  testhouseFloorPrefab: {fileID: 5845792565941980255, guid: a4816a895bd78ac43a709753e722ced3, type: 3}
+  testhouseRoofPrefab: {fileID: 7557362665463825653, guid: 36be3fd3949090842a80188b85e9cb26, type: 3}
+  greekFloorBigPrefab: {fileID: 8722980847679514037, guid: 80d6976ff1604e7458b51d82633e6c33, type: 3}
+  greekFloorBigAndWidePrefab: {fileID: 4993521586796761370, guid: 2cf502a7b8bbedb4e9a988e3b2925e0a, type: 3}
+  greekFloorPillarsPrefab: {fileID: 4755352571446461705, guid: 1f8c9e2e73617d146a36166a5e8b5700, type: 3}
+  greekFoundationPrefab: {fileID: 263797093385763556, guid: f0026aa7143a9774781ff6dab205a3db, type: 3}
+  greekRoofPrefab: {fileID: 5597644111846070387, guid: bdf4333d2a5d4184680fd8fb9767f50b, type: 3}
+  greekRoofTinyPrefab: {fileID: 6620657859691925874, guid: 1cbdffd416a601f4eae21e9c046fbedb, type: 3}
   blocksParent: {fileID: 0}
   blockSpawnPosition: {fileID: 1642586181}
   randomXMaxDiff: 1

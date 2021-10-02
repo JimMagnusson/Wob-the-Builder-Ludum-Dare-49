@@ -7,4 +7,5 @@ public class BlockUI : MonoBehaviour
 {
     [SerializeField] public Image border;
     [SerializeField] public Image levelIcon;
+    //[SerializeField] public Image image;
 }
