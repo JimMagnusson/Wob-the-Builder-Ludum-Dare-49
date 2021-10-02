@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foundationPrefab: {fileID: 5148905435645203370, guid: 106c58292705c8245ac4d764e7edf8a0, type: 3}
+  floorPrefab: {fileID: 5845792565941980255, guid: a4816a895bd78ac43a709753e722ced3, type: 3}
   roofPrefab: {fileID: 7712571492600786904, guid: f5037915db6bd2f498d01387f390d158, type: 3}
   blocksParent: {fileID: 0}
   blockSpawnPosition: {fileID: 1642586181}

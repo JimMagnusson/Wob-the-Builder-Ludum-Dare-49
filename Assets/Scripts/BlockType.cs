@@ -5,5 +5,6 @@ using UnityEngine;
 public enum BlockType
 {
     foundation,
+    floor,
     roof
 }
