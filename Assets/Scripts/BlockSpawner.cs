@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject foundationPrefab;
-    [SerializeField] GameObject floorPrefab;
-    [SerializeField] GameObject roofPrefab;
+    [SerializeField] GameObject foundationPrefab = null;
+    [SerializeField] GameObject floorPrefab = null;
+    [SerializeField] GameObject roofPrefab = null;
 
+    [SerializeField] GameObject blocksParent = null;
+    [SerializeField] Transform blockSpawnPosition = null;
 
-    [SerializeField] GameObject blocksParent;
-    [SerializeField] Transform blockSpawnPosition;
+    [SerializeField] float randomXMaxDiff = 2f;
 
 
     public Block SpawnBlock(BlockType blockType)
@@ -18,6 +19,8 @@ public class BlockSpawner : MonoBehaviour
         if(blockSpawnPosition == null) { Debug.LogError("No blockSpawnPosition reference"); }
         Block block = null;
         GameObject blockGO = null;
+
+        float randomDiff = Random.Range(-randomXMaxDiff, randomXMaxDiff);
 
         switch (blockType)
         {

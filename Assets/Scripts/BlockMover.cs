@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BlockMover : MonoBehaviour
 {
-    [SerializeField] private BlockQueue blockQueue;
+    [SerializeField] private BlockQueue blockQueue = null;
     //[SerializeField] private 
 
     [SerializeField] private float airHorizontalSpeed = 10;
-    [SerializeField] private float onGroundhorizontalSpeed = 2f;
+    [SerializeField] private float onGroundHorizontalSpeed = 2f;
 
     [SerializeField] private float fastVerticalSpeed = 10;
     [SerializeField] private float normalVerticalSpeed = 1;
@@ -120,7 +120,7 @@ public class BlockMover : MonoBehaviour
         // Add player input on x-axis
         if(blockOnGround)
         {
-            horizontalSpeed = onGroundhorizontalSpeed;
+            horizontalSpeed = onGroundHorizontalSpeed;
         }
         else
         {

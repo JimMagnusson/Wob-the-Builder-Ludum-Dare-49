@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BlockQueueEmptyHandler();
+public delegate void BlockQueueEndHandler();
 public class BlockQueue : MonoBehaviour
 {
-    public event BlockQueueEmptyHandler blockQueueEmpty;
-    [SerializeField] BlockSpawner blockSpawner;
-    [SerializeField] List<BlockType> blockQueue;
+    public event BlockQueueEndHandler blockQueueEnd;
+    [SerializeField] BlockSpawner blockSpawner = null;
+    [SerializeField] List<BlockType> blockQueue = null;
 
 
     public Block GetNextBlock()
@@ -27,10 +27,9 @@ public class BlockQueue : MonoBehaviour
         }
         else
         {
-            Debug.Log("End of block queue");
-            if(blockQueueEmpty != null)
+            if(blockQueueEnd != null)
             {
-                blockQueueEmpty();
+                blockQueueEnd();
             }
         }
         return block;

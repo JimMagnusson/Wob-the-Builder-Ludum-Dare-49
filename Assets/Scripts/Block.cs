@@ -9,8 +9,8 @@ public class Block : MonoBehaviour
     public event BlockOnGroundHandler BlockOnGround;
     public bool Placed { get; private set; }
 
-    [SerializeField] PhysicMaterial frictionless;
-    [SerializeField] PhysicMaterial general;
+    [SerializeField] PhysicMaterial frictionless = null;
+    [SerializeField] PhysicMaterial general = null;
 
 
     [SerializeField] int startMass = 1;
