@@ -10,11 +10,6 @@ public class Block : MonoBehaviour
 
     private bool placed = false;
 
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(!placed)

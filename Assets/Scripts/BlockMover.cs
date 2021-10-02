@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BlockMover : MonoBehaviour
 {
-    [SerializeField] private Transform currentBlock;
+    [SerializeField] private Block currentBlock;
     [SerializeField] private BlockQueue blockQueue;
 
 
@@ -21,9 +21,21 @@ public class BlockMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentBlock = blockQueue.GetNextBlock().transform;
+        if(blockQueue == null)
+        {
+            Debug.LogError("No blockQueue reference");
+            return;
+        }
+        currentBlock = blockQueue.GetNextBlock();
+        if(currentBlock == null)
+        {
+            Debug.LogError("No block recieved from blockQueue");
+            return;
+        }
+
         if (currentBlock == null) { return; }
-        currentBlock.GetComponent<Block>().BlockPlaced += BlockMover_BlockPlaced;
+
+        currentBlock.BlockPlaced += BlockMover_BlockPlaced;
         currentBlockRB = currentBlock.GetComponent<Rigidbody>();
     }
 
@@ -38,7 +50,7 @@ public class BlockMover : MonoBehaviour
         }
         else
         {
-            currentBlock = newBlock.transform;
+            currentBlock = newBlock;
             currentBlock.GetComponent<Block>().BlockPlaced += BlockMover_BlockPlaced;
             currentBlockRB = currentBlock.GetComponent<Rigidbody>();
         }

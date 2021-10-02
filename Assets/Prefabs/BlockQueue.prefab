@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5282307065985383162
+--- !u!1 &6238203397819448371
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2457491054594546320}
-  - component: {fileID: 4507945403477906100}
+  - component: {fileID: 6238203397819448373}
+  - component: {fileID: 6238203397819448370}
   m_Layer: 0
-  m_Name: Block Mover
+  m_Name: BlockQueue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2457491054594546320
+--- !u!4 &6238203397819448373
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5282307065985383162}
+  m_GameObject: {fileID: 6238203397819448371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 67.83, y: 139.9, z: 384.28018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4507945403477906100
+--- !u!114 &6238203397819448370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5282307065985383162}
+  m_GameObject: {fileID: 6238203397819448371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7826e1a863d7bc347949cb5139eca360, type: 3}
+  m_Script: {fileID: 11500000, guid: d6067abb23ec8564abbc145db8b0aae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBlock: {fileID: 0}
-  blockQueue: {fileID: 0}
-  horizontalSpeed: 7.5
-  fastVerticalSpeed: 10
-  normalVerticalSpeed: 2
+  blockQueue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  testQueue: 0000000001000000000000000000000001000000
