@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BlockMover : MonoBehaviour
 {
-    [SerializeField] private Block currentBlock;
     [SerializeField] private BlockQueue blockQueue;
 
 
@@ -12,7 +11,10 @@ public class BlockMover : MonoBehaviour
     [SerializeField] private float fastVerticalSpeed = 10;
     [SerializeField] private float normalVerticalSpeed = 1;
 
+    [SerializeField] private float groundBaseTime = 0.25f;
+    [SerializeField] private float groundMovementTime = 0.75f;
 
+    private Block currentBlock;
     private Rigidbody currentBlockRB;
     private float horizontalInput;
 
@@ -35,15 +37,27 @@ public class BlockMover : MonoBehaviour
 
         if (currentBlock == null) { return; }
 
-        currentBlock.BlockPlaced += BlockMover_BlockPlaced;
+        currentBlock.BlockOnGround += BlockMover_BlockOnGround;
         currentBlockRB = currentBlock.GetComponent<Rigidbody>();
     }
 
-    private void BlockMover_BlockPlaced()
+    private void BlockMover_BlockOnGround()
     {
-        currentBlock.GetComponent<Block>().BlockPlaced -= BlockMover_BlockPlaced;
+        StartCoroutine(GroundMovementWait());
+    }
+
+    private IEnumerator GroundMovementWait()
+    {
+        yield return new WaitForSeconds(groundMovementTime);
+        currentBlock.GetComponent<Block>().BlockOnGround -= BlockMover_BlockOnGround;
+        currentBlock.SetAsPlacesd();
+        HandleNewBlock();
+    }
+
+    private void HandleNewBlock()
+    {
         Block newBlock = blockQueue.GetNextBlock();
-        if(newBlock == null)
+        if (newBlock == null)
         {
             currentBlock = null;
             currentBlockRB = null;
@@ -51,7 +65,7 @@ public class BlockMover : MonoBehaviour
         else
         {
             currentBlock = newBlock;
-            currentBlock.GetComponent<Block>().BlockPlaced += BlockMover_BlockPlaced;
+            currentBlock.GetComponent<Block>().BlockOnGround += BlockMover_BlockOnGround;
             currentBlockRB = currentBlock.GetComponent<Rigidbody>();
         }
     }

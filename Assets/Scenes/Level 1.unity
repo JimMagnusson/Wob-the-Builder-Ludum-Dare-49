@@ -706,6 +706,10 @@ PrefabInstance:
       propertyPath: blockQueue
       value: 
       objectReference: {fileID: 1807556299}
+    - target: {fileID: 4507945403477906100, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
+      propertyPath: groundMovementTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5282307065985383162, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: m_Name
       value: Block Mover
@@ -729,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 13400000, guid: 0491d815edc98264ab303233df4cf102, type: 2}
     - target: {fileID: 4287467232154931215, guid: c8235b6dfa9caf742a23f3eb41ad6384, type: 3}
       propertyPath: m_CollisionDetection
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4326443866858963272, guid: c8235b6dfa9caf742a23f3eb41ad6384, type: 3}
       propertyPath: m_LocalPosition.x
@@ -921,5 +925,9 @@ PrefabInstance:
       propertyPath: blocksParent
       value: 
       objectReference: {fileID: 675391652}
+    - target: {fileID: 6810275702798664873, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
+      propertyPath: roofPrefab
+      value: 
+      objectReference: {fileID: 7557362665463825653, guid: 36be3fd3949090842a80188b85e9cb26, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
