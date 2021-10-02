@@ -243,7 +243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &789645403
 GameObject:
@@ -495,7 +495,7 @@ RectTransform:
   m_Children:
   - {fileID: 789645404}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -627,7 +627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1502139236 stripped
 MonoBehaviour:
@@ -688,7 +688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457491054594546320, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2457491054594546320, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -708,7 +708,15 @@ PrefabInstance:
       objectReference: {fileID: 1807556299}
     - target: {fileID: 4507945403477906100, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: groundMovementTime
-      value: 1
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507945403477906100, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
+      propertyPath: airHorizontalSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507945403477906100, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
+      propertyPath: onGroundhorizontalSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5282307065985383162, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: m_Name
@@ -818,7 +826,7 @@ PrefabInstance:
       objectReference: {fileID: 1502139236}
     - target: {fileID: 6238203397819448371, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: m_Name
-      value: BlockQueue
+      value: Block Queue
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448373, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: m_LocalPosition.x
@@ -875,7 +883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5159741923720112298, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
       propertyPath: m_Name
-      value: BlockSpawner
+      value: Block Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 6353229746920838386, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
       propertyPath: m_LocalPosition.x

@@ -128,4 +128,4 @@ MonoBehaviour:
   frictionless: {fileID: 13400000, guid: 93ce1f9a46521f14d85ae899e43c57e6, type: 2}
   general: {fileID: 13400000, guid: 0491d815edc98264ab303233df4cf102, type: 2}
   startMass: 1
-  placedMass: 1000
+  placedMass: 50

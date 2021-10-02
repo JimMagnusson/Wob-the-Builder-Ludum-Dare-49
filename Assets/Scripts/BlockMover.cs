@@ -7,16 +7,23 @@ public class BlockMover : MonoBehaviour
     [SerializeField] private BlockQueue blockQueue;
 
 
-    [SerializeField] private float horizontalSpeed = 2;
+    [SerializeField] private float airHorizontalSpeed = 10;
+    [SerializeField] private float onGroundhorizontalSpeed = 2f;
+
     [SerializeField] private float fastVerticalSpeed = 10;
     [SerializeField] private float normalVerticalSpeed = 1;
 
     [SerializeField] private float groundBaseTime = 0.25f;
-    [SerializeField] private float groundMovementTime = 0.75f;
+    //[SerializeField] private float groundMovementTime = 0.75f;
 
     private Block currentBlock;
     private Rigidbody currentBlockRB;
     private float horizontalInput;
+    private float verticalInput;
+
+    private bool placeBlockWhenStopping = false;
+    private bool blockOnGround = false;
+    private float onGroundTimer = 0;
 
     private bool moveFaster = false;
 
@@ -43,14 +50,18 @@ public class BlockMover : MonoBehaviour
 
     private void BlockMover_BlockOnGround()
     {
-        StartCoroutine(GroundMovementWait());
+        // Lvet the player move the block on the ground.
+        {
+            blockOnGround = true;
+            onGroundTimer = groundBaseTime;
+        }
     }
 
-    private IEnumerator GroundMovementWait()
+    private void PlaceBlock()
     {
-        yield return new WaitForSeconds(groundMovementTime);
+        blockOnGround = false;
         currentBlock.GetComponent<Block>().BlockOnGround -= BlockMover_BlockOnGround;
-        currentBlock.SetAsPlacesd();
+        currentBlock.SetAsPlaced();
         HandleNewBlock();
     }
 
@@ -73,9 +84,10 @@ public class BlockMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        if(Input.GetAxisRaw("Vertical") < 0)
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (verticalInput < 0)
         {
             moveFaster = true;
         }
@@ -83,8 +95,23 @@ public class BlockMover : MonoBehaviour
         {
             moveFaster = false;
         }
-    }
 
+        if(blockOnGround)
+        {
+            // Reset timer if the player is moving the block
+            if (horizontalInput != 0)
+            {
+                onGroundTimer = groundBaseTime;
+            }
+            onGroundTimer -= Time.deltaTime;
+
+            //If timer is zero or If player holds down, go to placement.
+            if (onGroundTimer <= 0 || verticalInput < 0)
+            {
+                PlaceBlock();
+            }
+        }
+    }
     private void FixedUpdate()
     {
         if (currentBlockRB == null) { return; }
@@ -99,7 +126,18 @@ public class BlockMover : MonoBehaviour
             verticalSpeed = normalVerticalSpeed;
         }
 
+        float horizontalSpeed = 0;
         // Add player input on x-axis
+        if(blockOnGround)
+        {
+            horizontalSpeed = onGroundhorizontalSpeed;
+        }
+        else
+        {
+            horizontalSpeed = airHorizontalSpeed;
+        }
+
+
         currentBlockRB.velocity = new Vector3(horizontalInput * horizontalSpeed, -verticalSpeed, currentBlockRB.velocity.z);
     }
 }

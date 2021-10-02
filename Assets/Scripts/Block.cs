@@ -42,7 +42,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    public void SetAsPlacesd()
+    public void SetAsPlaced()
     {
         ToggleFriction(true);
         GetComponent<Rigidbody>().useGravity = true;
