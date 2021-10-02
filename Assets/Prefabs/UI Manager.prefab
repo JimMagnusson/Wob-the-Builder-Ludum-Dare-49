@@ -47,3 +47,14 @@ MonoBehaviour:
   losePopup: {fileID: 0}
   timeToWinPopup: {fileID: 0}
   timeToWinText: {fileID: 0}
+  blockUIs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  roofBorder: {fileID: 21300000, guid: 949a0a316ebc65a43acbcf7f50dd945b, type: 3}
+  floorBorder: {fileID: 21300000, guid: fcddd77fd2946944dba6d57cbf9bdc10, type: 3}
+  foundationBorder: {fileID: 21300000, guid: 814ce7d6c02a68a47bb7791974130649, type: 3}
+  roofIcon: {fileID: 21300000, guid: 48501707bef51c34db66e991daeef44b, type: 3}
+  floorIcon: {fileID: 21300000, guid: 0b3df8f3e07e6e94c8a7bf2d0bbdc78d, type: 3}
+  foundationIcon: {fileID: 21300000, guid: 9b21ecfb537ff994e94753b8e5789092, type: 3}
+  blocksLeftText: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum BlockType
 {
+    none,
     foundation,
     floor,
     roof

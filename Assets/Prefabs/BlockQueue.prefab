@@ -43,9 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6067abb23ec8564abbc145db8b0aae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockQueue:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  testQueue: 0000000001000000000000000000000001000000
+  blockSpawner: {fileID: 0}
+  uiManager: {fileID: 0}
+  numberOfBlocksInUI: 3
+  blockQueue: 0100000002000000020000000100000003000000

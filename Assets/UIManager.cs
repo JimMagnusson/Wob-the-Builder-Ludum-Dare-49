@@ -11,7 +11,25 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image timeToWinPopup = null;
     [SerializeField] private TextMeshProUGUI timeToWinText = null;
 
+    [SerializeField] private BlockUI[] blockUIs = null;
+    [SerializeField] private Sprite roofBorder;
+    [SerializeField] private Sprite floorBorder;
+    [SerializeField] private Sprite foundationBorder;
+
+    [SerializeField] private Sprite roofIcon;
+    [SerializeField] private Sprite floorIcon;
+    [SerializeField] private Sprite foundationIcon;
+
+    [SerializeField] private TextMeshProUGUI blocksLeftText = null;
+
     private string timeToWinString;
+    private string blocksLeftString;
+
+    private void Awake()
+    {
+        if (timeToWinText == null) { Debug.LogError("blocksLeftText no reference found."); }
+        blocksLeftString = blocksLeftText.text;
+    }
 
     private void Start()
     {
@@ -41,5 +59,36 @@ public class UIManager : MonoBehaviour
         // Edit transparancy based on how close to next second it is.
         float diff = timeToWin - (int)timeToWin;
         timeToWinText.alpha = diff / 1f;
+    }
+
+    public void UpdateBlocksUI(int index, BlockType blockType)
+    {
+        if(index < 0 || index >= blockUIs.Length) { Debug.LogError("Invalid index för blocksUI array: " + index); }
+        BlockUI blockUI = blockUIs[index];
+        if(blockUI == null) { Debug.LogError("No BlockUI reference. Check BlockUIs array in UIManager"); }
+        blockUI.gameObject.SetActive(true);
+        switch (blockType)
+        {
+            case BlockType.none:
+                blockUI.gameObject.SetActive(false);
+                break;
+            case BlockType.foundation:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                break;
+            case BlockType.floor:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                break;
+            case BlockType.roof:
+                blockUI.border.sprite = roofBorder;
+                blockUI.levelIcon.sprite = roofIcon;
+                break;
+        }
+    }
+
+    public void UpdateBlocksLeftText(int blocksLeft)
+    {
+        blocksLeftText.text = blocksLeftString + blocksLeft;
     }
 }

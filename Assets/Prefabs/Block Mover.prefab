@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7826e1a863d7bc347949cb5139eca360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBlock: {fileID: 0}
   blockQueue: {fileID: 0}
-  horizontalSpeed: 7.5
+  airHorizontalSpeed: 8
+  onGroundHorizontalSpeed: 2
   fastVerticalSpeed: 10
   normalVerticalSpeed: 2
+  groundMovementTime: 0.75
