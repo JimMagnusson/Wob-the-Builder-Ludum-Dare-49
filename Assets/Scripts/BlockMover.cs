@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockMover : MonoBehaviour
 {
     [SerializeField] private BlockQueue blockQueue;
-
+    //[SerializeField] private 
 
     [SerializeField] private float airHorizontalSpeed = 10;
     [SerializeField] private float onGroundhorizontalSpeed = 2f;
@@ -13,21 +13,17 @@ public class BlockMover : MonoBehaviour
     [SerializeField] private float fastVerticalSpeed = 10;
     [SerializeField] private float normalVerticalSpeed = 1;
 
-    [SerializeField] private float groundBaseTime = 0.25f;
-    //[SerializeField] private float groundMovementTime = 0.75f;
+    [SerializeField] private float groundMovementTime = 0.5f;
 
     private Block currentBlock;
     private Rigidbody currentBlockRB;
     private float horizontalInput;
     private float verticalInput;
 
-    private bool placeBlockWhenStopping = false;
     private bool blockOnGround = false;
     private float onGroundTimer = 0;
+    private bool moveDownFaster = false;
 
-    private bool moveFaster = false;
-
-    // Start is called before the first frame update
     void Start()
     {
         if(blockQueue == null)
@@ -50,10 +46,10 @@ public class BlockMover : MonoBehaviour
 
     private void BlockMover_BlockOnGround()
     {
-        // Lvet the player move the block on the ground.
+        // Let the player move the block on the ground.
         {
             blockOnGround = true;
-            onGroundTimer = groundBaseTime;
+            onGroundTimer = groundMovementTime;
         }
     }
 
@@ -81,7 +77,6 @@ public class BlockMover : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -89,20 +84,15 @@ public class BlockMover : MonoBehaviour
 
         if (verticalInput < 0)
         {
-            moveFaster = true;
+            moveDownFaster = true;
         }
         else
         {
-            moveFaster = false;
+            moveDownFaster = false;
         }
 
         if(blockOnGround)
         {
-            // Reset timer if the player is moving the block
-            if (horizontalInput != 0)
-            {
-                onGroundTimer = groundBaseTime;
-            }
             onGroundTimer -= Time.deltaTime;
 
             //If timer is zero or If player holds down, go to placement.
@@ -117,7 +107,7 @@ public class BlockMover : MonoBehaviour
         if (currentBlockRB == null) { return; }
         float verticalSpeed = 0;
 
-        if(moveFaster)
+        if(moveDownFaster)
         {
             verticalSpeed = fastVerticalSpeed;
         }

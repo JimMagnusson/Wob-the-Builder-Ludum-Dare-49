@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BlockPlacedHandler();
+public delegate void BlockOnGroundHandler();
 
 public class Block : MonoBehaviour
 {
-    public event BlockPlacedHandler BlockOnGround;
+    public event BlockOnGroundHandler BlockOnGround;
+    public bool Placed { get; private set; }
 
     [SerializeField] PhysicMaterial frictionless;
     [SerializeField] PhysicMaterial general;
@@ -21,6 +22,7 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
+        Placed = false;
         rb = GetComponent<Rigidbody>();
         generalCollider = GetComponent<Collider>();
 
@@ -48,6 +50,7 @@ public class Block : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         rb.mass = placedMass;
         rb.velocity = Vector3.zero;
+        Placed = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -64,7 +67,6 @@ public class Block : MonoBehaviour
             {
                 BlockOnGround();
             }
-            //GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
