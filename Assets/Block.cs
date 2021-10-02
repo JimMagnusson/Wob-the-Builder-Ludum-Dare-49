@@ -24,6 +24,7 @@ public class Block : MonoBehaviour
             {
                 BlockPlaced();
             }
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }
