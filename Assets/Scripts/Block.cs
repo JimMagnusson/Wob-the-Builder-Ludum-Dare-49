@@ -23,15 +23,19 @@ public class Block : MonoBehaviour
     private bool hasBeenPrePlaced = false;
     private Rigidbody rb;
     private Collider generalCollider;
+    private Wind wind = null;
+
 
     private void Start()
     {
         Placed = false;
+        wind = FindObjectOfType<Wind>();
         rb = GetComponent<Rigidbody>();
         generalCollider = GetComponent<Collider>();
 
         rb.mass = startMass;
         ToggleFriction(false);
+        rb.constraints = RigidbodyConstraints.FreezePositionZ;
     }
 
     public BlockLevelType GetBlockLevelType()
@@ -152,9 +156,26 @@ public class Block : MonoBehaviour
             hasBeenPrePlaced = true;
 
             // Open constraints
-            //rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.constraints = RigidbodyConstraints.None;
 
             BlockPrePlaced?.Invoke();
         }
     }
+
+    private void FixedUpdate()
+    {
+        if(wind != null && Placed)
+        {
+            // Apply wind
+            if(wind.IsDirectedRight())
+            {
+                rb.AddForce(Vector3.right * wind.GetWindStrength());
+            }
+            else
+            {
+                rb.AddForce(-Vector3.right * wind.GetWindStrength());
+            }
+        }
+    }
+
 }

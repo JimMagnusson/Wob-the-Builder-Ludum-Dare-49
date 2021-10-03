@@ -27,7 +27,6 @@ public class BlockSpawner : MonoBehaviour
 
     [SerializeField] float randomXMaxDiff = 1f;
 
-
     public Block SpawnBlock(BlockType blockType)
     {
         if(blockSpawnPosition == null) { Debug.LogError("No blockSpawnPosition reference"); }
