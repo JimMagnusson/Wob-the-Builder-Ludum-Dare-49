@@ -569,6 +569,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6b1d9ac34748af41b85798df753ad36, type: 3}
+--- !u!114 &1129483131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 862173503, guid: d6b1d9ac34748af41b85798df753ad36, type: 3}
+  m_PrefabInstance: {fileID: 1129483130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ef45d8e9331cd4dba12a79db158739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!850595691 &1253902378
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -803,6 +814,10 @@ PrefabInstance:
       propertyPath: blockQueue
       value: 
       objectReference: {fileID: 1807556299}
+    - target: {fileID: 2032017369272373819, guid: b7471832b3860a242bd090f9b022e2f9, type: 3}
+      propertyPath: levelCompletionTracker
+      value: 
+      objectReference: {fileID: 1129483131}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7471832b3860a242bd090f9b022e2f9, type: 3}
 --- !u!114 &2032017370711332748 stripped

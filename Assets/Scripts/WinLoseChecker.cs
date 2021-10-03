@@ -11,7 +11,7 @@ public class WinLoseChecker : MonoBehaviour
 {
     [SerializeField] private UIManager uiManager = null;
     [SerializeField] private BlockQueue blockQueue = null;
-    //[SerializeField] private GameManager gameManager = null;
+    [SerializeField] private LevelCompletionTracker levelCompletionTracker = null;
     [SerializeField] private float stabilizationSeconds = 4f;
 
     public event GameDoneHandler GameDone;
@@ -70,7 +70,7 @@ public class WinLoseChecker : MonoBehaviour
     {
         uiManager.ToggleWinPopup(true);
         GameDone?.Invoke();
-
+        levelCompletionTracker.SaveCurrentLevelAsCompleted();
     }
     private void Lose()
     {
