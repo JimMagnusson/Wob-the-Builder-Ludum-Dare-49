@@ -7,7 +7,8 @@ public class Wind : MonoBehaviour
 
     [SerializeField] bool directedRight = true;
 
-    [SerializeField] float windStrength = 50f;
+    [SerializeField] float windStrength = 10f;
+    [SerializeField] float windPlacedStrength = 50f;
 
     public bool IsDirectedRight()
     {
@@ -19,17 +20,8 @@ public class Wind : MonoBehaviour
         return windStrength;
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    public float GetWindPlacedStrength()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return windPlacedStrength;
     }
 }

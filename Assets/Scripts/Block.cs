@@ -66,44 +66,6 @@ public class Block : MonoBehaviour
         Placed = true;
     }
 
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        Block collidingBlock = other.gameObject.GetComponent<Block>();
-
-        switch (blockLevelType)
-        {
-            case BlockLevelType.none:
-                Debug.LogError("Block level type is marked as none. Check the inspector value.");
-                break;
-            case BlockLevelType.foundation:
-                // Lose if foundation is placed upon any other block? Maybe unneccessary
-                if (collidingBlock != null)
-                {
-                    Debug.Log("Foundation placed on another block. Lose game: " + collidingBlock.blockLevelType);
-                }
-                break;
-            case BlockLevelType.floor:
-                // Lose if floor block is placed on ground
-                if (other.gameObject.CompareTag("Ground"))
-                {
-                    Debug.Log("Floor block placed on ground surface. Lose game");
-                }
-                break;
-            case BlockLevelType.roof:
-                // Lose if roof block is placed on ground
-                if (other.gameObject.CompareTag("Ground"))
-                {
-                    Debug.Log("Floor block placed on ground surface. Lose game");
-                }
-                break;
-            default:
-                Debug.LogError("Unknown block level type: " + blockLevelType + ". Check the inspector value.");
-                break;
-        }
-    }
-    */
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("BoundingBox"))
@@ -123,13 +85,7 @@ public class Block : MonoBehaviour
                 Debug.LogError("Block level type is marked as none. Check the inspector value.");
                 break;
             case BlockLevelType.foundation:
-                /*
-                // Lose if foundation is placed upon any other block? Maybe unneccessary
-                if (collidingBlock != null)
-                {
-                    Debug.Log("Foundation placed on another block. Lose game: " + collidingBlock.blockLevelType);
-                }
-                */
+
                 break;
             case BlockLevelType.floor:
                 // Lose if floor block is placed on ground
@@ -164,19 +120,27 @@ public class Block : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if(wind != null && Placed)
-        if (wind != null)
+        if(wind != null)
         {
-            // Apply wind
-            if(wind.IsDirectedRight())
+            float strength = 0f;
+            if(Placed)
             {
-                rb.AddForce(Vector3.right * wind.GetWindStrength());
+                strength = wind.GetWindPlacedStrength();
             }
             else
             {
-                rb.AddForce(-Vector3.right * wind.GetWindStrength());
+                strength = wind.GetWindStrength();
+            }
+
+            // Apply wind
+            if (wind.IsDirectedRight())
+            {
+                rb.AddForce(Vector3.right * strength);
+            }
+            else
+            {
+                rb.AddForce(-Vector3.right * strength);
             }
         }
     }
-
 }

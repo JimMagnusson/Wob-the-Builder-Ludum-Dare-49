@@ -849,7 +849,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2092041504093838660, guid: 6ce2796f883a3324dbbfe44486f1c0cb, type: 3}
-      propertyPath: windStrength
+      propertyPath: windPlacedStrength
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2092041504093838661, guid: 6ce2796f883a3324dbbfe44486f1c0cb, type: 3}

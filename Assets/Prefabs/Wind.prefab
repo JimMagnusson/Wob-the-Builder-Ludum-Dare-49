@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directedRight: 1
-  windStrength: 50
+  windStrength: 10
+  windPlacedStrength: 75
