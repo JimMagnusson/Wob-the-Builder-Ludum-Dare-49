@@ -141,10 +141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3018431345606768393, guid: 7c0f7a761329b9d42b068609b16ad83b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -125.1001
-      objectReference: {fileID: 0}
     - target: {fileID: 3018431346111322665, guid: 7c0f7a761329b9d42b068609b16ad83b, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -241,10 +237,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6323405085386188736}
-    - target: {fileID: 3018431346751286694, guid: 7c0f7a761329b9d42b068609b16ad83b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 683
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0f7a761329b9d42b068609b16ad83b, type: 3}
 --- !u!114 &26818028 stripped
