@@ -15,6 +15,13 @@ public class BlockSpawner : MonoBehaviour
     [SerializeField] GameObject greekRoofPrefab = null;
     [SerializeField] GameObject greekRoofTinyPrefab = null;
 
+    [SerializeField] GameObject mountainFloorLargePrefab = null;
+    [SerializeField] GameObject mountainFloorSmallPrefab = null;
+    [SerializeField] GameObject mountainFoundationLargePrefab = null;
+    [SerializeField] GameObject mountainFoundationSmallPrefab = null;
+    [SerializeField] GameObject mountainRoofLargePrefab = null;
+    [SerializeField] GameObject mountainRoofSmallPrefab = null;
+
     [SerializeField] GameObject blocksParent = null;
     [SerializeField] Transform blockSpawnPosition = null;
 
@@ -91,6 +98,48 @@ public class BlockSpawner : MonoBehaviour
             case BlockType.greekRoofTiny:
                 if (greekRoofTinyPrefab == null) { Debug.LogError("Prefab not found"); }
                 blockGO = Instantiate(greekRoofTinyPrefab, spawnpos, greekRoofTinyPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainFloorLarge:
+                if (mountainFloorLargePrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainFloorLargePrefab, spawnpos, mountainFloorLargePrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainFloorSmall:
+                if (mountainFloorSmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainFloorSmallPrefab, spawnpos, mountainFloorSmallPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainFoundationLarge:
+                if (mountainFoundationLargePrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainFoundationLargePrefab, spawnpos, mountainFoundationLargePrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainFoundationSmall:
+                if (mountainFoundationSmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainFoundationSmallPrefab, spawnpos, mountainFoundationSmallPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainRoofLarge:
+                if (mountainRoofLargePrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainRoofLargePrefab, spawnpos, mountainRoofLargePrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.mountainRoofSmall:
+                if (mountainRoofSmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(mountainRoofSmallPrefab, spawnpos, mountainRoofSmallPrefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found)"); }
                 break;

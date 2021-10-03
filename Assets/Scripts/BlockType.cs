@@ -14,5 +14,12 @@ public enum BlockType
     greekFloorPillars,
     greekFoundation,
     greekRoof,
-    greekRoofTiny
+    greekRoofTiny,
+
+    mountainFloorLarge,
+    mountainFloorSmall,
+    mountainFoundationLarge,
+    mountainFoundationSmall,
+    mountainRoofLarge,
+    mountainRoofSmall
 }

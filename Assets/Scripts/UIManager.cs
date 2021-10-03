@@ -12,24 +12,32 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeToWinText = null;
 
     [SerializeField] private BlockUI[] blockUIs = null;
-    [SerializeField] private Sprite roofBorder;
-    [SerializeField] private Sprite floorBorder;
-    [SerializeField] private Sprite foundationBorder;
+    [SerializeField] private Sprite roofBorder = null;
+    [SerializeField] private Sprite floorBorder = null;
+    [SerializeField] private Sprite foundationBorder = null;
 
-    [SerializeField] private Sprite roofIcon;
-    [SerializeField] private Sprite floorIcon;
-    [SerializeField] private Sprite foundationIcon;
+    [SerializeField] private Sprite roofIcon = null;
+    [SerializeField] private Sprite floorIcon = null;
+    [SerializeField] private Sprite foundationIcon = null;
 
-    [SerializeField] private Sprite testhouseFoundation;
-    [SerializeField] private Sprite testhouseFloor;
-    [SerializeField] private Sprite testhouseRoof;
+    [SerializeField] private Sprite testhouseFoundation = null;
+    [SerializeField] private Sprite testhouseFloor = null;
+    [SerializeField] private Sprite testhouseRoof = null;
 
-    [SerializeField] private Sprite greekFloorBig;
-    [SerializeField] private Sprite greekFloorBigAndWide;
-    [SerializeField] private Sprite greekFloorPillars;
-    [SerializeField] private Sprite greekFoundation;
-    [SerializeField] private Sprite greekRoof;
-    [SerializeField] private Sprite greekRoofTiny;
+    [SerializeField] private Sprite greekFloorBig = null;
+    [SerializeField] private Sprite greekFloorBigAndWide = null;
+    [SerializeField] private Sprite greekFloorPillars = null;
+    [SerializeField] private Sprite greekFoundation = null;
+    [SerializeField] private Sprite greekRoof = null;
+    [SerializeField] private Sprite greekRoofTiny = null;
+
+    [SerializeField] private Sprite mountainFloorLarge = null;
+    [SerializeField] private Sprite mountainFloorSmall = null;
+    [SerializeField] private Sprite mountainFoundationLarge = null;
+    [SerializeField] private Sprite mountainFoundationSmall = null;
+    [SerializeField] private Sprite mountainRoofLarge = null;
+    [SerializeField] private Sprite mountainRoofSmall = null;
+
 
     [SerializeField] private TextMeshProUGUI blocksLeftText = null;
 
@@ -127,6 +135,36 @@ public class UIManager : MonoBehaviour
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
                 //blockUI.levelIcon.image = greekRoofTiny;
+                break;
+            case BlockType.mountainFloorLarge:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainFloorLarge;
+                break;
+            case BlockType.mountainFloorSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainFloorSmall;
+                break;
+            case BlockType.mountainFoundationLarge:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainFoundationLarge;
+                break;
+            case BlockType.mountainFoundationSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainFoundationSmall;
+                break;
+            case BlockType.mountainRoofLarge:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainRoofLarge;
+                break;
+            case BlockType.mountainRoofSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                //blockUI.levelIcon.image = mountainRoofSmall;
                 break;
         }
     }
