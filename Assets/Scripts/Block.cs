@@ -164,7 +164,8 @@ public class Block : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(wind != null && Placed)
+        //if(wind != null && Placed)
+        if (wind != null)
         {
             // Apply wind
             if(wind.IsDirectedRight())
