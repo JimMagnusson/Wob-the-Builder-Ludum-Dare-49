@@ -54,9 +54,9 @@ MonoBehaviour:
   roofBorder: {fileID: 21300000, guid: 949a0a316ebc65a43acbcf7f50dd945b, type: 3}
   floorBorder: {fileID: 21300000, guid: fcddd77fd2946944dba6d57cbf9bdc10, type: 3}
   foundationBorder: {fileID: 21300000, guid: 814ce7d6c02a68a47bb7791974130649, type: 3}
-  roofIcon: {fileID: 21300000, guid: 78ac09cbb3286e247b3aa95941e83630, type: 3}
-  floorIcon: {fileID: 21300000, guid: 5de78aecc3532e74e89462ccae9e1e4c, type: 3}
-  foundationIcon: {fileID: 21300000, guid: c956ddd8c212dca44812cf010bc7e08a, type: 3}
+  roofIcon: {fileID: 21300000, guid: ce1ac4fd0a082074d9910b4880ce84d5, type: 3}
+  floorIcon: {fileID: 21300000, guid: 1dc81f33b900c6c4bac43cd0f8c1b3ab, type: 3}
+  foundationIcon: {fileID: 21300000, guid: 3776dfc331f54dd409f249f5e5f763e2, type: 3}
   testhouseFoundation: {fileID: 21300000, guid: 93514ff445b951d42864311245b6b5db, type: 3}
   testhouseFloor: {fileID: 21300000, guid: c45ec58b122121344bc8f4e7c5105d5a, type: 3}
   testhouseRoof: {fileID: 21300000, guid: 5aeb2ae945e19494eb9f11819c185bf2, type: 3}

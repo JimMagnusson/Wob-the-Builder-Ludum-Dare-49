@@ -41,8 +41,14 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI blocksLeftText = null;
 
+    [SerializeField] private Image windIcon = null;
+    [SerializeField] private Sprite weakWindSprite = null;
+    [SerializeField] private Sprite strongWindSprite = null;
+    [SerializeField] private int switchIconAtPlacedWindStrength = 75;
+
     private string timeToWinString;
     private string blocksLeftString;
+    private Wind wind;
 
     private void Awake()
     {
@@ -53,6 +59,28 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         if (timeToWinText == null) { Debug.LogError("Time to win text no reference found."); }
+        wind = FindObjectOfType<Wind>();
+        if (wind != null)
+        {
+            windIcon.transform.parent.gameObject.SetActive(true);
+            if (wind.GetWindPlacedStrength() < switchIconAtPlacedWindStrength)
+            {
+                windIcon.sprite = weakWindSprite;
+            }
+            else
+            {
+                windIcon.sprite = strongWindSprite;
+            }
+
+            if(!wind.IsDirectedRight()) {
+                Vector3 tempLocalScale = windIcon.GetComponent<RectTransform>().localScale;
+                windIcon.GetComponent<RectTransform>().localScale = new Vector3(-tempLocalScale.x, tempLocalScale.y, tempLocalScale.z);
+            }
+        }
+        else
+        {
+            windIcon.transform.parent.gameObject.SetActive(false);
+        }
     }
 
     public void ToggleTimeToWinPopup(bool toggle)

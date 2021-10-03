@@ -34,7 +34,6 @@ public class WinLoseChecker : MonoBehaviour
             hasLostOrWon = true;
             Lose();
         }
-        Lose();
     }
 
     private void BlockQueue_blockQueueEnd()
