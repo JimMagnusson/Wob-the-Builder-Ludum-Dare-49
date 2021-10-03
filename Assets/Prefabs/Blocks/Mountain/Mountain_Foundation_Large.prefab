@@ -280,6 +280,7 @@ MonoBehaviour:
   general: {fileID: 13400000, guid: 0491d815edc98264ab303233df4cf102, type: 2}
   startMass: 1
   placedMass: 20
+  blockLevelType: 1
 --- !u!54 &9096693615361044846
 Rigidbody:
   m_ObjectHideFlags: 0

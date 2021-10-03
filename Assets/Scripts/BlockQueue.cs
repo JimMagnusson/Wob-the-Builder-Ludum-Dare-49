@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void BlockQueueEndHandler();
+
+public delegate void BlockHasFallenHandler();
+
 public class BlockQueue : MonoBehaviour
 {
-    public event BlockQueueEndHandler blockQueueEnd;
+    public event BlockQueueEndHandler BlockQueueEnd;
+    public event BlockHasFallenHandler BlockHasFallen;
+
     [SerializeField] BlockSpawner blockSpawner = null;
     [SerializeField] UIManager uiManager = null;
     [SerializeField] int numberOfBlocksInUI = 3;
@@ -47,15 +52,20 @@ public class BlockQueue : MonoBehaviour
             BlockType blockType = blockQueue[0];
             blockQueue.RemoveAt(0);
             block = blockSpawner.SpawnBlock(blockType);
+
+            // Subscribe to lose event:
+            block.BlockFallen += Block_BlockFallen;
             UpdateBlockQueueUI();
         }
         else
         {
-            if(blockQueueEnd != null)
-            {
-                blockQueueEnd();
-            }
+            BlockQueueEnd?.Invoke();
         }
         return block;
+    }
+
+    private void Block_BlockFallen()
+    {
+        BlockHasFallen?.Invoke();
     }
 }

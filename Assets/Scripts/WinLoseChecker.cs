@@ -4,23 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+public delegate void GameDoneHandler();
+
 public class WinLoseChecker : MonoBehaviour
 {
-    [SerializeField] UIManager uiManager = null;
-    [SerializeField] BlockQueue blockQueue = null;
-    [SerializeField] float stabilizationSeconds = 5f;
+    [SerializeField] private UIManager uiManager = null;
+    [SerializeField] private BlockQueue blockQueue = null;
+    //[SerializeField] private GameManager gameManager = null;
+    [SerializeField] private float stabilizationSeconds = 4f;
 
+    public event GameDoneHandler GameDone;
     private float timeToWin = 0;
-
-    //[SerializeField] private 
-    //Currently assume win condition is to place all blocks legally and no block has fallen
-
+    private bool hasLostOrWon = false;
 
     void Start()
     {
         if(blockQueue == null) { Debug.LogError("No reference to blockQueue found"); }
         if (uiManager == null) { Debug.LogError("No reference to uiManager found"); }
-        blockQueue.blockQueueEnd += BlockQueue_blockQueueEnd;
+        //if (gameManager == null) { Debug.LogError("No reference to gameManager found"); }
+        blockQueue.BlockQueueEnd += BlockQueue_blockQueueEnd;
+        blockQueue.BlockHasFallen += BlockQueue_blockHasFallen;
+    }
+
+    private void BlockQueue_blockHasFallen()
+    {
+        if(!hasLostOrWon)
+        {
+            hasLostOrWon = true;
+            Lose();
+        }
+        Lose();
     }
 
     private void BlockQueue_blockQueueEnd()
@@ -42,7 +56,13 @@ public class WinLoseChecker : MonoBehaviour
             if (timeToWin <= 0)
             {
                 uiManager.ToggleTimeToWinPopup(false);
-                Win();
+
+                
+                if (!hasLostOrWon)
+                {
+                    hasLostOrWon = true;
+                    Win();
+                }
             }
         }
     }
@@ -50,9 +70,13 @@ public class WinLoseChecker : MonoBehaviour
     private void Win()
     {
         uiManager.ToggleWinPopup(true);
+        GameDone?.Invoke();
+
     }
     private void Lose()
     {
+        // Stop blocks from being able to move.
         uiManager.ToggleLosePopup(true);
+        GameDone?.Invoke();
     }
 }

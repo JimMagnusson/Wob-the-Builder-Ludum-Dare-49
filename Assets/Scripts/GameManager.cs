@@ -8,4 +8,16 @@ public class GameManager : MonoBehaviour
     {
         Application.targetFrameRate = 60; // My GPU makes a grinding noise otherwise
     }
+
+    public void TogglePause(bool pause)
+    {
+        if(pause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
 }

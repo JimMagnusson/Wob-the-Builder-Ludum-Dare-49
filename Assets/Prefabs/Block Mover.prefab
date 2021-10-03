@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockQueue: {fileID: 0}
-  airHorizontalSpeed: 8
+  winLoseChecker: {fileID: 0}
+  airHorizontalSpeed: 5
   onGroundHorizontalSpeed: 2
   fastVerticalSpeed: 10
   normalVerticalSpeed: 2
-  groundMovementTime: 0.75
+  prePlacedMovementTime: 0.5

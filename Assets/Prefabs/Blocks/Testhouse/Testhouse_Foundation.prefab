@@ -129,3 +129,4 @@ MonoBehaviour:
   general: {fileID: 13400000, guid: 0491d815edc98264ab303233df4cf102, type: 2}
   startMass: 1
   placedMass: 25
+  blockLevelType: 1

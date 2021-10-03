@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BlockOnGroundHandler();
+public delegate void BlockPrePlacedHandler();
+public delegate void BlockFallenHandler();
 
 public class Block : MonoBehaviour
 {
-    public event BlockOnGroundHandler BlockOnGround;
+    public event BlockPrePlacedHandler BlockPrePlaced;
+    public event BlockFallenHandler BlockFallen;
     public bool Placed { get; private set; }
 
-    [SerializeField] PhysicMaterial frictionless = null;
-    [SerializeField] PhysicMaterial general = null;
+    [SerializeField] private PhysicMaterial frictionless = null;
+    [SerializeField] private PhysicMaterial general = null;
 
 
-    [SerializeField] int startMass = 1;
-    [SerializeField] int placedMass = 100;
+    [SerializeField] private int startMass = 1;
+    [SerializeField] private int placedMass = 20;
 
-    private bool onGround = false;
+    [SerializeField] private BlockLevelType blockLevelType = BlockLevelType.none;
+
+    private bool hasBeenPrePlaced = false;
     private Rigidbody rb;
     private Collider generalCollider;
 
@@ -28,6 +32,11 @@ public class Block : MonoBehaviour
 
         rb.mass = startMass;
         ToggleFriction(false);
+    }
+
+    public BlockLevelType GetBlockLevelType()
+    {
+        return blockLevelType;
     }
 
 
@@ -53,20 +62,99 @@ public class Block : MonoBehaviour
         Placed = true;
     }
 
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        Block collidingBlock = other.gameObject.GetComponent<Block>();
+
+        switch (blockLevelType)
+        {
+            case BlockLevelType.none:
+                Debug.LogError("Block level type is marked as none. Check the inspector value.");
+                break;
+            case BlockLevelType.foundation:
+                // Lose if foundation is placed upon any other block? Maybe unneccessary
+                if (collidingBlock != null)
+                {
+                    Debug.Log("Foundation placed on another block. Lose game: " + collidingBlock.blockLevelType);
+                }
+                break;
+            case BlockLevelType.floor:
+                // Lose if floor block is placed on ground
+                if (other.gameObject.CompareTag("Ground"))
+                {
+                    Debug.Log("Floor block placed on ground surface. Lose game");
+                }
+                break;
+            case BlockLevelType.roof:
+                // Lose if roof block is placed on ground
+                if (other.gameObject.CompareTag("Ground"))
+                {
+                    Debug.Log("Floor block placed on ground surface. Lose game");
+                }
+                break;
+            default:
+                Debug.LogError("Unknown block level type: " + blockLevelType + ". Check the inspector value.");
+                break;
+        }
+    }
+    */
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("BoundingBox"))
+        {
+            Debug.Log("Block has fallen out of bounds. Lose game");
+            BlockFallen?.Invoke();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if(!onGround)
+        Block collidingBlock = collision.gameObject.GetComponent<Block>();
+
+        switch (blockLevelType)
         {
-            onGround = true;
+            case BlockLevelType.none:
+                Debug.LogError("Block level type is marked as none. Check the inspector value.");
+                break;
+            case BlockLevelType.foundation:
+                /*
+                // Lose if foundation is placed upon any other block? Maybe unneccessary
+                if (collidingBlock != null)
+                {
+                    Debug.Log("Foundation placed on another block. Lose game: " + collidingBlock.blockLevelType);
+                }
+                */
+                break;
+            case BlockLevelType.floor:
+                // Lose if floor block is placed on ground
+                if (collision.gameObject.CompareTag("Ground"))
+                {
+                    Debug.Log("Floor block placed on ground surface. Lose game");
+                    BlockFallen?.Invoke();
+                }
+                break;
+            case BlockLevelType.roof:
+                // Lose if roof block is placed on ground
+                if (collision.gameObject.CompareTag("Ground"))
+                {
+                    Debug.Log("Floor block placed on ground surface. Lose game");
+                    BlockFallen?.Invoke();
+                }
+                break;
+            default:
+                Debug.LogError("Unknown block level type: " + blockLevelType + ". Check the inspector value.");
+                break;
+        }
+        if (!hasBeenPrePlaced)
+        {
+            hasBeenPrePlaced = true;
 
             // Open constraints
             //rb.constraints = RigidbodyConstraints.FreezeAll;
 
-
-            if (BlockOnGround != null)
-            {
-                BlockOnGround();
-            }
+            BlockPrePlaced?.Invoke();
         }
     }
 }

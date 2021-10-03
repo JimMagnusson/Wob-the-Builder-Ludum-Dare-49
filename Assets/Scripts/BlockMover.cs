@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockMover : MonoBehaviour
 {
     [SerializeField] private BlockQueue blockQueue = null;
+    [SerializeField] private WinLoseChecker winLoseChecker = null;
     //[SerializeField] private 
 
     [SerializeField] private float airHorizontalSpeed = 10;
@@ -13,16 +14,18 @@ public class BlockMover : MonoBehaviour
     [SerializeField] private float fastVerticalSpeed = 10;
     [SerializeField] private float normalVerticalSpeed = 1;
 
-    [SerializeField] private float groundMovementTime = 0.5f;
+    [SerializeField] private float prePlacedMovementTime = 0.5f;
 
     private Block currentBlock;
     private Rigidbody currentBlockRB;
     private float horizontalInput;
     private float verticalInput;
 
-    private bool blockOnGround = false;
-    private float onGroundTimer = 0;
+    private bool blockPrePlaced = false;
+    private float prePlacedTimer = 0;
     private bool moveDownFaster = false;
+    private bool gameDone = false;
+    private bool stopBlock = false;
 
     void Start()
     {
@@ -31,6 +34,15 @@ public class BlockMover : MonoBehaviour
             Debug.LogError("No blockQueue reference");
             return;
         }
+
+        if (winLoseChecker == null)
+        {
+            Debug.LogError("No winLoseChecker reference");
+            return;
+        }
+
+        winLoseChecker.GameDone += WinLoseChecker_GameDone;
+
         currentBlock = blockQueue.GetNextBlock();
         if(currentBlock == null)
         {
@@ -40,23 +52,28 @@ public class BlockMover : MonoBehaviour
 
         if (currentBlock == null) { return; }
 
-        currentBlock.BlockOnGround += BlockMover_BlockOnGround;
+        currentBlock.BlockPrePlaced += BlockMover_BlockPrePlaced;
         currentBlockRB = currentBlock.GetComponent<Rigidbody>();
     }
 
-    private void BlockMover_BlockOnGround()
+    private void WinLoseChecker_GameDone()
     {
-        // Let the player move the block on the ground.
+        gameDone = true;
+    }
+
+    private void BlockMover_BlockPrePlaced()
+    {
+        // Let the player move the block before placing it.
         {
-            blockOnGround = true;
-            onGroundTimer = groundMovementTime;
+            blockPrePlaced = true;
+            prePlacedTimer = prePlacedMovementTime;
         }
     }
 
     private void PlaceBlock()
     {
-        blockOnGround = false;
-        currentBlock.GetComponent<Block>().BlockOnGround -= BlockMover_BlockOnGround;
+        blockPrePlaced = false;
+        currentBlock.GetComponent<Block>().BlockPrePlaced -= BlockMover_BlockPrePlaced;
         currentBlock.SetAsPlaced();
         HandleNewBlock();
     }
@@ -72,13 +89,18 @@ public class BlockMover : MonoBehaviour
         else
         {
             currentBlock = newBlock;
-            currentBlock.GetComponent<Block>().BlockOnGround += BlockMover_BlockOnGround;
+            currentBlock.GetComponent<Block>().BlockPrePlaced += BlockMover_BlockPrePlaced;
             currentBlockRB = currentBlock.GetComponent<Rigidbody>();
         }
     }
 
     void Update()
     {
+        if (gameDone)
+        {
+            return;
+        }
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
@@ -91,12 +113,12 @@ public class BlockMover : MonoBehaviour
             moveDownFaster = false;
         }
 
-        if(blockOnGround)
+        if(blockPrePlaced)
         {
-            onGroundTimer -= Time.deltaTime;
+            prePlacedTimer -= Time.deltaTime;
 
             //If timer is zero or If player holds down, go to placement.
-            if (onGroundTimer <= 0 || verticalInput < 0)
+            if (prePlacedTimer <= 0 || verticalInput < 0)
             {
                 PlaceBlock();
             }
@@ -105,6 +127,11 @@ public class BlockMover : MonoBehaviour
     private void FixedUpdate()
     {
         if (currentBlockRB == null) { return; }
+        if(gameDone)
+        {
+            currentBlockRB.isKinematic = true;
+            return;
+        }
         float verticalSpeed = 0;
 
         if(moveDownFaster)
@@ -118,7 +145,7 @@ public class BlockMover : MonoBehaviour
 
         float horizontalSpeed = 0;
         // Add player input on x-axis
-        if(blockOnGround)
+        if(blockPrePlaced)
         {
             horizontalSpeed = onGroundHorizontalSpeed;
         }

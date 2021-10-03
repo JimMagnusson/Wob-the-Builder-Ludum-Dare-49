@@ -577,6 +577,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1651350989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2032017369272373819, guid: b7471832b3860a242bd090f9b022e2f9, type: 3}
+  m_PrefabInstance: {fileID: 1870139661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b42f3b77e7bb3d4e9d41426b7748bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1670320235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1670320235, guid: 7c0f7a761329b9d42b068609b16ad83b, type: 3}
@@ -1048,9 +1059,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1807556299}
     - target: {fileID: 4507945403477906100, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
-      propertyPath: airHorizontalSpeed
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: winLoseChecker
+      value: 
+      objectReference: {fileID: 1651350989}
     - target: {fileID: 5282307065985383162, guid: 35eea47b93d74644595176b67ee874ef, type: 3}
       propertyPath: m_Name
       value: Block Mover
