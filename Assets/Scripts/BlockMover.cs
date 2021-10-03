@@ -25,7 +25,6 @@ public class BlockMover : MonoBehaviour
     private float prePlacedTimer = 0;
     private bool moveDownFaster = false;
     private bool gameDone = false;
-    private bool stopBlock = false;
 
     void Start()
     {

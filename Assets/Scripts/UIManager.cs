@@ -94,77 +94,77 @@ public class UIManager : MonoBehaviour
             case BlockType.testhouseFoundation:
                 blockUI.border.sprite = foundationBorder;
                 blockUI.levelIcon.sprite = foundationIcon;
-                //blockUI.levelIcon.image = testhouseFoundation;
+                blockUI.image.sprite = testhouseFoundation;
                 break;
             case BlockType.testhouseFloor:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = testhouseFloor;
+                blockUI.image.sprite = testhouseFloor;
                 break;
             case BlockType.testHouseRoof:
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
-                //blockUI.levelIcon.image = testhouseRoof;
+                blockUI.image.sprite = testhouseRoof;
                 break;
             case BlockType.greekFloorBig:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = greekFloorBig;
+                blockUI.image.sprite = greekFloorBig;
                 break;
             case BlockType.greekFloorBigAndWide:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = greekFloorBigAndWide;
+                blockUI.image.sprite = greekFloorBigAndWide;
                 break;
             case BlockType.greekFloorPillars:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = greekFloorPillars;
+                blockUI.image.sprite = greekFloorPillars;
                 break;
             case BlockType.greekFoundation:
                 blockUI.border.sprite = foundationBorder;
                 blockUI.levelIcon.sprite = foundationIcon;
-                //blockUI.levelIcon.image = greekFoundation;
+                blockUI.image.sprite = greekFoundation;
                 break;
             case BlockType.greekRoof:
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
-                //blockUI.levelIcon.image = greekRoof;
+                blockUI.image.sprite = greekRoof;
                 break;
             case BlockType.greekRoofTiny:
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
-                //blockUI.levelIcon.image = greekRoofTiny;
+                blockUI.image.sprite = greekRoofTiny;
                 break;
             case BlockType.mountainFloorLarge:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainFloorLarge;
+                blockUI.image.sprite = mountainFloorLarge;
                 break;
             case BlockType.mountainFloorSmall:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainFloorSmall;
+                blockUI.image.sprite = mountainFloorSmall;
                 break;
             case BlockType.mountainFoundationLarge:
-                blockUI.border.sprite = floorBorder;
-                blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainFoundationLarge;
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = mountainFoundationLarge;
                 break;
             case BlockType.mountainFoundationSmall:
-                blockUI.border.sprite = floorBorder;
-                blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainFoundationSmall;
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = mountainFoundationSmall;
                 break;
             case BlockType.mountainRoofLarge:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainRoofLarge;
+                blockUI.image.sprite = mountainRoofLarge;
                 break;
             case BlockType.mountainRoofSmall:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                //blockUI.levelIcon.image = mountainRoofSmall;
+                blockUI.image.sprite = mountainRoofSmall;
                 break;
         }
     }
