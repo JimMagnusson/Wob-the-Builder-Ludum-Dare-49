@@ -33,11 +33,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level greek 2.unity
     guid: 8d62f001b2ce6164aaa11ba6f0f516ca
   - enabled: 1
+    path: Assets/Scenes/Level greek 3.unity
+    guid: f22a354de83ff164195e398e4b66b5fc
+  - enabled: 1
     path: Assets/Scenes/Level mountain 1.unity
     guid: 9e631d0b2ca9e724585fe782feedc139
   - enabled: 1
     path: Assets/Scenes/Level mountain 2.unity
     guid: 8e4110859d6fb704c9f3af05a9d4b9c0
+  - enabled: 1
+    path: Assets/Scenes/Level Last.unity
+    guid: d54ca25bcd3815e458aa3300517823e0
   - enabled: 1
     path: Assets/Scenes/End_Screen.unity
     guid: f853dfb4eb1a9ec429175e791b12021a
