@@ -20,9 +20,23 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite floorIcon = null;
     [SerializeField] private Sprite foundationIcon = null;
 
-    [SerializeField] private Sprite testhouseFoundation = null;
-    [SerializeField] private Sprite testhouseFloor = null;
-    [SerializeField] private Sprite testhouseRoof = null;
+    [SerializeField] private Sprite testhouse1Foundation = null;
+    [SerializeField] private Sprite testhouse1Floor = null;
+    [SerializeField] private Sprite testhouse1Roof = null;
+    [SerializeField] private Sprite testhouse1FloorSmall = null;
+
+    [SerializeField] private Sprite testhouse2Foundation = null;
+    [SerializeField] private Sprite testhouse2Floor = null;
+    [SerializeField] private Sprite testhouse2Roof = null;
+    [SerializeField] private Sprite testhouse2FloorSmall = null;
+
+    [SerializeField] private Sprite testhouse3Foundation = null;
+    [SerializeField] private Sprite testhouse3Floor = null;
+    [SerializeField] private Sprite testhouse3Roof = null;
+    [SerializeField] private Sprite testhouse3FloorSmall = null;
+
+    [SerializeField] private Sprite testhouseFenceSmall = null;
+    [SerializeField] private Sprite testhouseFenceLarge = null;
 
     [SerializeField] private Sprite greekFloorBig = null;
     [SerializeField] private Sprite greekFloorBigAndWide = null;
@@ -119,21 +133,81 @@ public class UIManager : MonoBehaviour
             case BlockType.none:
                 blockUI.gameObject.SetActive(false);
                 break;
-            case BlockType.testhouseFoundation:
+            case BlockType.testhouse1Foundation:
                 blockUI.border.sprite = foundationBorder;
                 blockUI.levelIcon.sprite = foundationIcon;
-                blockUI.image.sprite = testhouseFoundation;
+                blockUI.image.sprite = testhouse1Foundation;
                 break;
-            case BlockType.testhouseFloor:
+            case BlockType.testhouse1Floor:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;
-                blockUI.image.sprite = testhouseFloor;
+                blockUI.image.sprite = testhouse1Floor;
                 break;
-            case BlockType.testHouseRoof:
+            case BlockType.testHouse1Roof:
                 blockUI.border.sprite = roofBorder;
                 blockUI.levelIcon.sprite = roofIcon;
-                blockUI.image.sprite = testhouseRoof;
+                blockUI.image.sprite = testhouse1Roof;
                 break;
+            case BlockType.testHouse1FloorSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                blockUI.image.sprite = testhouse1FloorSmall;
+                break;
+
+            case BlockType.testhouse2Foundation:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = testhouse2Foundation;
+                break;
+            case BlockType.testhouse2Floor:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                blockUI.image.sprite = testhouse2Floor;
+                break;
+            case BlockType.testHouse2Roof:
+                blockUI.border.sprite = roofBorder;
+                blockUI.levelIcon.sprite = roofIcon;
+                blockUI.image.sprite = testhouse2Roof;
+                break;
+            case BlockType.testHouse2FloorSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                blockUI.image.sprite = testhouse2FloorSmall;
+                break;
+
+            case BlockType.testhouse3Foundation:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = testhouse3Foundation;
+                break;
+            case BlockType.testhouse3Floor:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                blockUI.image.sprite = testhouse3Floor;
+                break;
+            case BlockType.testHouse3Roof:
+                blockUI.border.sprite = roofBorder;
+                blockUI.levelIcon.sprite = roofIcon;
+                blockUI.image.sprite = testhouse3Roof;
+                break;
+            case BlockType.testHouse3FloorSmall:
+                blockUI.border.sprite = floorBorder;
+                blockUI.levelIcon.sprite = floorIcon;
+                blockUI.image.sprite = testhouse3FloorSmall;
+                break;
+
+
+            case BlockType.testHouseFenceSmall:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = testhouseFenceSmall;
+                break;
+            case BlockType.testHouseFenceLarge:
+                blockUI.border.sprite = foundationBorder;
+                blockUI.levelIcon.sprite = foundationIcon;
+                blockUI.image.sprite = testhouseFenceLarge;
+                break;
+
             case BlockType.greekFloorBig:
                 blockUI.border.sprite = floorBorder;
                 blockUI.levelIcon.sprite = floorIcon;

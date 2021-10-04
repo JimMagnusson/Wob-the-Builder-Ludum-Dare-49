@@ -5,9 +5,23 @@ using UnityEngine;
 public enum BlockType
 {
     none,
-    testhouseFoundation,
-    testhouseFloor,
-    testHouseRoof,
+    testhouse1Foundation,
+    testhouse1Floor,
+    testHouse1Roof,
+    testHouse1FloorSmall,
+
+    testhouse2Foundation,
+    testhouse2Floor,
+    testHouse2Roof,
+    testHouse2FloorSmall,
+
+    testhouse3Foundation,
+    testhouse3Floor,
+    testHouse3Roof,
+    testHouse3FloorSmall,
+
+    testHouseFenceSmall,
+    testHouseFenceLarge,
 
     greekFloorBig,
     greekFloorBigAndWide,
@@ -22,4 +36,5 @@ public enum BlockType
     mountainFoundationSmall,
     mountainRoofLarge,
     mountainRoofSmall
+
 }

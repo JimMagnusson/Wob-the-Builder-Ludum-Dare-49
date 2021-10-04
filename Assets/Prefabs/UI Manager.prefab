@@ -57,9 +57,20 @@ MonoBehaviour:
   roofIcon: {fileID: 21300000, guid: ce1ac4fd0a082074d9910b4880ce84d5, type: 3}
   floorIcon: {fileID: 21300000, guid: 1dc81f33b900c6c4bac43cd0f8c1b3ab, type: 3}
   foundationIcon: {fileID: 21300000, guid: 3776dfc331f54dd409f249f5e5f763e2, type: 3}
-  testhouseFoundation: {fileID: 21300000, guid: 93514ff445b951d42864311245b6b5db, type: 3}
-  testhouseFloor: {fileID: 21300000, guid: c45ec58b122121344bc8f4e7c5105d5a, type: 3}
-  testhouseRoof: {fileID: 21300000, guid: 5aeb2ae945e19494eb9f11819c185bf2, type: 3}
+  testhouse1Foundation: {fileID: 21300000, guid: 93514ff445b951d42864311245b6b5db, type: 3}
+  testhouse1Floor: {fileID: 21300000, guid: c45ec58b122121344bc8f4e7c5105d5a, type: 3}
+  testhouse1Roof: {fileID: 21300000, guid: 5aeb2ae945e19494eb9f11819c185bf2, type: 3}
+  testhouse1FloorSmall: {fileID: 21300000, guid: 081d3d298c79d7140a906c108df6cbc6, type: 3}
+  testhouse2Foundation: {fileID: 21300000, guid: 348ae62b7a47e4f4b880f61496bbb391, type: 3}
+  testhouse2Floor: {fileID: 21300000, guid: c8d054f30329170479d0d6139606e376, type: 3}
+  testhouse2Roof: {fileID: 21300000, guid: 8ca4779bc13039a419f69273279dc91f, type: 3}
+  testhouse2FloorSmall: {fileID: 21300000, guid: c493dc53d72691b4f9c1be1c24f38764, type: 3}
+  testhouse3Foundation: {fileID: 21300000, guid: 3c130a7c69730d04caf2966da8cb15eb, type: 3}
+  testhouse3Floor: {fileID: 21300000, guid: 03a946157d6e8b946b210da43aba1e92, type: 3}
+  testhouse3Roof: {fileID: 21300000, guid: 558634bb01c165f4e861d1ee26242851, type: 3}
+  testhouse3FloorSmall: {fileID: 21300000, guid: 9748c823654bf204994fcadbd5937e83, type: 3}
+  testhouseFenceSmall: {fileID: 21300000, guid: 7949af69ce19a554ba087a9367138906, type: 3}
+  testhouseFenceLarge: {fileID: 21300000, guid: 804a7eda80d317842b923342a73b6a55, type: 3}
   greekFloorBig: {fileID: 21300000, guid: 4d738c37a1c46ed4b81074af2e93c8fd, type: 3}
   greekFloorBigAndWide: {fileID: 21300000, guid: 5f3ce9bd7cf6b7c4e97d9c35425551bd, type: 3}
   greekFloorPillars: {fileID: 21300000, guid: 14d013603b61d5345acd81cf5ec30357, type: 3}
@@ -73,3 +84,7 @@ MonoBehaviour:
   mountainRoofLarge: {fileID: 21300000, guid: c5b32a0a2a9e4f84d9f0507f8102c1cc, type: 3}
   mountainRoofSmall: {fileID: 21300000, guid: a4e4f05672d0ecf4cbf69c652ea29a4c, type: 3}
   blocksLeftText: {fileID: 0}
+  windIcon: {fileID: 0}
+  weakWindSprite: {fileID: 21300000, guid: 6e793d63763a76d4d8ee31954c7ffdd7, type: 3}
+  strongWindSprite: {fileID: 21300000, guid: 3b5a45ef7d81f9f4b8a149da8e66d5af, type: 3}
+  switchIconAtPlacedWindStrength: 75
