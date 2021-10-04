@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelSelectScreen : MonoBehaviour
+public class ToggleActiveGO : MonoBehaviour
 {
     public void ToggleActive()
     {

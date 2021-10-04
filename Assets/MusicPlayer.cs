@@ -7,6 +7,7 @@ public class MusicPlayer : MonoBehaviour
 	public static MusicPlayer Instance = null;
 
 	private AudioSource audioSource;
+	private GameManager gameManager;
 	private bool toggled = false;
 
 	private void Awake()
@@ -24,17 +25,25 @@ public class MusicPlayer : MonoBehaviour
 		audioSource = GetComponent<AudioSource>();
 	}
 
-	public void MuteToggle()
+    private void Start()
+    {
+		gameManager = FindObjectOfType<GameManager>();
+
+	}
+
+    public void MuteToggle()
     {
 		if(!toggled)
         {
 			toggled = true;
 			audioSource.mute = true;
+			gameManager.MuteGame(true);
 		}
 		else
         {
 			toggled = false;
 			audioSource.mute = false;
+			gameManager.MuteGame(false);
 		}
 	}
 }

@@ -19,11 +19,16 @@ public class Block : MonoBehaviour
     [SerializeField] private int placedMass = 20;
 
     [SerializeField] private BlockLevelType blockLevelType = BlockLevelType.none;
+    [SerializeField] AudioClip blockPlacedSFX1 = null;
+    [SerializeField] AudioClip blockPlacedSFX2 = null;
+    [SerializeField] AudioClip destroyedSFX1 = null;
+    [SerializeField] AudioClip destroyedSFX2 = null;
 
     private bool hasBeenPrePlaced = false;
     private Rigidbody rb;
     private Collider generalCollider;
     private Wind wind = null;
+    private AudioSource audioSource;
 
 
     private void Start()
@@ -31,11 +36,13 @@ public class Block : MonoBehaviour
         Placed = false;
         wind = FindObjectOfType<Wind>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         generalCollider = GetComponent<Collider>();
 
         rb.mass = startMass;
         ToggleFriction(false);
         rb.constraints = RigidbodyConstraints.FreezePositionZ;
+
     }
 
     public BlockLevelType GetBlockLevelType()
@@ -75,6 +82,35 @@ public class Block : MonoBehaviour
         }
     }
 
+    private void PlayDestroyedSFX()
+    {
+        if (FindObjectOfType<GameManager>().IsGameMuted()) { return; }
+        int randomNum = Random.Range(0, 2);
+        if (randomNum == 0)
+        {
+            audioSource.PlayOneShot(destroyedSFX1);
+        }
+        else
+        {
+            audioSource.PlayOneShot(destroyedSFX2);
+        }
+    }
+
+    private void PlayPlacedSFX()
+    {
+        if (FindObjectOfType<GameManager>().IsGameMuted()) { return; }
+        int randomNum = Random.Range(0, 2);
+        if (randomNum == 0)
+        {
+            audioSource.PlayOneShot(blockPlacedSFX1);
+        }
+        else
+        {
+            audioSource.PlayOneShot(blockPlacedSFX2);
+        }
+        hasBeenPrePlaced = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Block collidingBlock = collision.gameObject.GetComponent<Block>();
@@ -92,6 +128,7 @@ public class Block : MonoBehaviour
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     Debug.Log("Floor block placed on ground surface. Lose game");
+                    PlayDestroyedSFX();
                     BlockFallen?.Invoke();
                 }
                 break;
@@ -100,6 +137,7 @@ public class Block : MonoBehaviour
                 if (collision.gameObject.CompareTag("Ground"))
                 {
                     Debug.Log("Floor block placed on ground surface. Lose game");
+                    PlayDestroyedSFX();
                     BlockFallen?.Invoke();
                 }
                 break;
@@ -109,8 +147,7 @@ public class Block : MonoBehaviour
         }
         if (!hasBeenPrePlaced)
         {
-            hasBeenPrePlaced = true;
-
+            PlayPlacedSFX();
             // Open constraints
             rb.constraints = RigidbodyConstraints.None;
 
