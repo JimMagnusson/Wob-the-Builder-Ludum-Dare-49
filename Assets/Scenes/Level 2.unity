@@ -1249,7 +1249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockQueue.Array.size
-      value: 16
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockSpawner
@@ -1261,71 +1261,31 @@ PrefabInstance:
       objectReference: {fileID: 2097111341}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockQueue.Array.data[5]
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[6]
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[1]
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[2]
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[3]
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[4]
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[7]
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[8]
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[9]
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[10]
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[11]
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[12]
-      value: 5
+      propertyPath: blockQueue.Array.data[6]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[13]
-      value: 8
+      propertyPath: blockQueue.Array.data[0]
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[14]
-      value: 6
+      propertyPath: blockQueue.Array.data[1]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[15]
-      value: 7
+      propertyPath: blockQueue.Array.data[2]
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
-      propertyPath: blockQueue.Array.data[16]
-      value: 7
+      propertyPath: blockQueue.Array.data[3]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
+      propertyPath: blockQueue.Array.data[4]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448371, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: m_Name
@@ -1384,10 +1344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1642586181, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.04
-      objectReference: {fileID: 0}
     - target: {fileID: 5159741923720112298, guid: 43620f77a8bce574c8eea38042c98f78, type: 3}
       propertyPath: m_Name
       value: Block Spawner

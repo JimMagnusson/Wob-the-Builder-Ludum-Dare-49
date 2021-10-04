@@ -13,16 +13,31 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
-    guid: 829beafef8be426418a8fbcbb3904a7c
+    guid: ee70a6d8deeaf994582f9b6f22c4bd3a
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
-    guid: 8d62f001b2ce6164aaa11ba6f0f516ca
+    guid: 9e4b263013c66614f999695b17cd5a49
   - enabled: 1
     path: Assets/Scenes/Level 4.unity
+    guid: d28231b080b0eed4ebbc5a98fabced09
+  - enabled: 1
+    path: Assets/Scenes/Level wind intro.unity
+    guid: 97febb3b62416de4bb3d9726422db46b
+  - enabled: 1
+    path: Assets/Scenes/Level wind hard.unity
+    guid: 1c2c4c4a42ba63142884500843007fc3
+  - enabled: 1
+    path: Assets/Scenes/Level greek 1.unity
+    guid: 73e85e145c4106b479106ab0c3091b68
+  - enabled: 1
+    path: Assets/Scenes/Level greek 2.unity
+    guid: 8d62f001b2ce6164aaa11ba6f0f516ca
+  - enabled: 1
+    path: Assets/Scenes/Level mountain 1.unity
     guid: 9e631d0b2ca9e724585fe782feedc139
   - enabled: 1
-    path: Assets/Scenes/Level 5.unity
-    guid: f50e041d6c5c76b4b88fe665526916a6
+    path: Assets/Scenes/Level mountain 2.unity
+    guid: 8e4110859d6fb704c9f3af05a9d4b9c0
   - enabled: 1
     path: Assets/Scenes/End_Screen.unity
     guid: f853dfb4eb1a9ec429175e791b12021a

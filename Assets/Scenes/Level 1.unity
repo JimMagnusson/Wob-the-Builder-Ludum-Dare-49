@@ -1249,7 +1249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockQueue.Array.size
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockSpawner
@@ -1266,6 +1266,18 @@ PrefabInstance:
     - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: blockQueue.Array.data[6]
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
+      propertyPath: blockQueue.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
+      propertyPath: blockQueue.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238203397819448370, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
+      propertyPath: blockQueue.Array.data[2]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6238203397819448371, guid: a803ef327822b584780990a7c2ea4e63, type: 3}
       propertyPath: m_Name
