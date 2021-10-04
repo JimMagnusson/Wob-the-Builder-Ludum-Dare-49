@@ -100,7 +100,7 @@ MonoBehaviour:
   frictionless: {fileID: 13400000, guid: 93ce1f9a46521f14d85ae899e43c57e6, type: 2}
   general: {fileID: 13400000, guid: 0491d815edc98264ab303233df4cf102, type: 2}
   startMass: 1
-  placedMass: 5
+  placedMass: 20
   blockLevelType: 2
   blockPlacedSFX1: {fileID: 8300000, guid: b734efd3f445f1d4eb6281a431cb2511, type: 3}
   blockPlacedSFX2: {fileID: 8300000, guid: b385207af20bac14ea1fdea373b7cf3e, type: 3}
