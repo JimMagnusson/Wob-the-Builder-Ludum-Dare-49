@@ -74,15 +74,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d729f4b7b196334882c80dcab6bd03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testhouseFoundationPrefab: {fileID: 5148905435645203370, guid: 106c58292705c8245ac4d764e7edf8a0, type: 3}
-  testhouseFloorPrefab: {fileID: 5845792565941980255, guid: a4816a895bd78ac43a709753e722ced3, type: 3}
-  testhouseRoofPrefab: {fileID: 7557362665463825653, guid: 36be3fd3949090842a80188b85e9cb26, type: 3}
+  testhouseFoundation1Prefab: {fileID: 5148905435645203370, guid: 106c58292705c8245ac4d764e7edf8a0, type: 3}
+  testhouseFloor1Prefab: {fileID: 5845792565941980255, guid: a4816a895bd78ac43a709753e722ced3, type: 3}
+  testhouseRoof1Prefab: {fileID: 7557362665463825653, guid: 36be3fd3949090842a80188b85e9cb26, type: 3}
+  testhouseFloor1SmallPrefab: {fileID: 1677948033819669395, guid: 49657b2e83ef2114f90640a27fdd7be6, type: 3}
+  testhouseFoundation2Prefab: {fileID: 7720233134485508914, guid: 6e84b049e3e2c7b4b990baea49dd8ba0, type: 3}
+  testhouseFloor2Prefab: {fileID: 6854210211037848107, guid: bf282d2cd62e5e24c9e134a26f070c16, type: 3}
+  testhouseRoof2Prefab: {fileID: 5440020689510871505, guid: 5e942de5a2083334e9888faa56008419, type: 3}
+  testhouseFloor2SmallPrefab: {fileID: 569160582725334480, guid: 809d3b1eadc6bf74e9727b4fb2c69ce6, type: 3}
+  testhouseFoundation3Prefab: {fileID: 3391593307805581813, guid: b848653a2c602da488af9c6a73d6eaa4, type: 3}
+  testhouseFloor3Prefab: {fileID: 1689223610365724764, guid: ed5aa98bed7d086418d5e9913cf37d8e, type: 3}
+  testhouseRoof3Prefab: {fileID: 421817894621288165, guid: 0df3ca6a40cdd3249b2c67f8a3b16e5a, type: 3}
+  testhouseFloor3SmallPrefab: {fileID: 8469455724079526084, guid: beacfc0a6aa2b7c49bcf0ecfb5adde26, type: 3}
+  testhouseFenceSmall: {fileID: 3953978574249589429, guid: 32c67afafe1d1d04a81f8e7271061546, type: 3}
+  testhouseFenceLarge: {fileID: 3094817218044516631, guid: cb73a9dc32e3b724988cdfc4149a0ac5, type: 3}
   greekFloorBigPrefab: {fileID: 8722980847679514037, guid: 80d6976ff1604e7458b51d82633e6c33, type: 3}
   greekFloorBigAndWidePrefab: {fileID: 4993521586796761370, guid: 2cf502a7b8bbedb4e9a988e3b2925e0a, type: 3}
   greekFloorPillarsPrefab: {fileID: 4755352571446461705, guid: 1f8c9e2e73617d146a36166a5e8b5700, type: 3}
   greekFoundationPrefab: {fileID: 263797093385763556, guid: f0026aa7143a9774781ff6dab205a3db, type: 3}
   greekRoofPrefab: {fileID: 5597644111846070387, guid: bdf4333d2a5d4184680fd8fb9767f50b, type: 3}
   greekRoofTinyPrefab: {fileID: 6620657859691925874, guid: 1cbdffd416a601f4eae21e9c046fbedb, type: 3}
+  mountainFloorLargePrefab: {fileID: 6089721691937791084, guid: d77f087aca42a7641bcc0cb9b2603d99, type: 3}
+  mountainFloorSmallPrefab: {fileID: 8171290058269710822, guid: 4d9c76ba3923a4f47b6f5cc11808073e, type: 3}
+  mountainFoundationLargePrefab: {fileID: 2926443379831820178, guid: 834a35af614b7b94ba32259e4c8fee55, type: 3}
+  mountainFoundationSmallPrefab: {fileID: 3797168777416187799, guid: e9ab02b501c415641873955d719a1293, type: 3}
+  mountainRoofLargePrefab: {fileID: 4890121444187924579, guid: fe3b6b64c4e2ca54bb398e223ccd80df, type: 3}
+  mountainRoofSmallPrefab: {fileID: 3698293569840918397, guid: d761a89ce6cb79145abb14d88c55b9d5, type: 3}
   blocksParent: {fileID: 0}
   blockSpawnPosition: {fileID: 1642586181}
   randomXMaxDiff: 1

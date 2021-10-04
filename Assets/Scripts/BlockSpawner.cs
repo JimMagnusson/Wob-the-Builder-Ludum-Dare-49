@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class BlockSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject testhouseFoundationPrefab = null;
-    [SerializeField] GameObject testhouseFloorPrefab = null;
-    [SerializeField] GameObject testhouseRoofPrefab = null;
+    [SerializeField] GameObject testhouseFoundation1Prefab = null;
+    [SerializeField] GameObject testhouseFloor1Prefab = null;
+    [SerializeField] GameObject testhouseRoof1Prefab = null;
+    [SerializeField] GameObject testhouseFloor1SmallPrefab = null;
+
+    [SerializeField] GameObject testhouseFoundation2Prefab = null;
+    [SerializeField] GameObject testhouseFloor2Prefab = null;
+    [SerializeField] GameObject testhouseRoof2Prefab = null;
+    [SerializeField] GameObject testhouseFloor2SmallPrefab = null;
+
+    [SerializeField] GameObject testhouseFoundation3Prefab = null;
+    [SerializeField] GameObject testhouseFloor3Prefab = null;
+    [SerializeField] GameObject testhouseRoof3Prefab = null;
+    [SerializeField] GameObject testhouseFloor3SmallPrefab = null;
+
+    [SerializeField] GameObject testhouseFenceSmall = null;
+    [SerializeField] GameObject testhouseFenceLarge = null;
 
     [SerializeField] GameObject greekFloorBigPrefab = null;
     [SerializeField] GameObject greekFloorBigAndWidePrefab = null;
@@ -38,26 +52,113 @@ public class BlockSpawner : MonoBehaviour
 
         switch (blockType)
         {
-            case BlockType.testhouseFoundation:
-                if(testhouseFoundationPrefab == null) { Debug.LogError("Prefab not found"); }
-                blockGO = Instantiate(testhouseFoundationPrefab, spawnpos, testhouseFoundationPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testhouse1Foundation:
+                if(testhouseFoundation1Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFoundation1Prefab, spawnpos, testhouseFoundation1Prefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
 
-            case BlockType.testhouseFloor:
-                if (testhouseFloorPrefab == null) { Debug.LogError("Prefab not found"); }
-                blockGO = Instantiate(testhouseFloorPrefab, spawnpos, testhouseFloorPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testhouse1Floor:
+                if (testhouseFloor1Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor1Prefab, spawnpos, testhouseFloor1Prefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
 
-            case BlockType.testHouseRoof:
-                if (testhouseRoofPrefab == null) { Debug.LogError("Prefab not found"); }
-                blockGO = Instantiate(testhouseRoofPrefab, spawnpos, testhouseRoofPrefab.transform.rotation, blocksParent.transform);
+            case BlockType.testHouse1Roof:
+                if (testhouseRoof1Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseRoof1Prefab, spawnpos, testhouseRoof1Prefab.transform.rotation, blocksParent.transform);
                 block = blockGO.GetComponent<Block>();
                 if (block == null) { Debug.LogError("No Block component found)"); }
                 break;
+
+            case BlockType.testHouse1FloorSmall:
+                if (testhouseFloor1SmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor1SmallPrefab, spawnpos, testhouseFloor1SmallPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+
+
+
+            case BlockType.testhouse2Foundation:
+                if (testhouseFoundation2Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFoundation2Prefab, spawnpos, testhouseFoundation2Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testhouse2Floor:
+                if (testhouseFloor2Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor2Prefab, spawnpos, testhouseFloor2Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testHouse2Roof:
+                if (testhouseRoof2Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseRoof2Prefab, spawnpos, testhouseRoof2Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testHouse2FloorSmall:
+                if (testhouseFloor2SmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor2SmallPrefab, spawnpos, testhouseFloor2SmallPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+
+
+            case BlockType.testhouse3Foundation:
+                if (testhouseFoundation3Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFoundation3Prefab, spawnpos, testhouseFoundation3Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testhouse3Floor:
+                if (testhouseFloor3Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor3Prefab, spawnpos, testhouseFloor3Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testHouse3Roof:
+                if (testhouseRoof3Prefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseRoof3Prefab, spawnpos, testhouseRoof3Prefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testHouse3FloorSmall:
+                if (testhouseFloor3SmallPrefab == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFloor3SmallPrefab, spawnpos, testhouseFloor3SmallPrefab.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+
+
+            case BlockType.testHouseFenceSmall:
+                if (testhouseFenceSmall == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFenceSmall, spawnpos, testhouseFenceSmall.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+            case BlockType.testHouseFenceLarge:
+                if (testhouseFenceLarge == null) { Debug.LogError("Prefab not found"); }
+                blockGO = Instantiate(testhouseFenceLarge, spawnpos, testhouseFenceLarge.transform.rotation, blocksParent.transform);
+                block = blockGO.GetComponent<Block>();
+                if (block == null) { Debug.LogError("No Block component found)"); }
+                break;
+
+
+
 
             case BlockType.greekFloorBig:
                 if (greekFloorBigPrefab == null) { Debug.LogError("Prefab not found"); }

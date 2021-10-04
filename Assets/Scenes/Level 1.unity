@@ -185,8 +185,8 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.14
-  m_Range: 10
+  m_Intensity: 1.2
+  m_Range: 20.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -241,8 +241,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.43361455, y: 0.002406314, z: -0.0013678037, w: 0.90109426}
+  m_LocalPosition: {x: 0.9790695, y: 9.8577385, z: -13.653568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -810,14 +810,6 @@ PrefabInstance:
       propertyPath: windIcon
       value: 
       objectReference: {fileID: 3018431347205252605}
-    - target: {fileID: 2627238929165335726, guid: 1d5ba754b6bc63b4a9626e08e0107277, type: 3}
-      propertyPath: weakWindSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6e793d63763a76d4d8ee31954c7ffdd7, type: 3}
-    - target: {fileID: 2627238929165335726, guid: 1d5ba754b6bc63b4a9626e08e0107277, type: 3}
-      propertyPath: strongWindSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3b5a45ef7d81f9f4b8a149da8e66d5af, type: 3}
     - target: {fileID: 2627238929165335727, guid: 1d5ba754b6bc63b4a9626e08e0107277, type: 3}
       propertyPath: m_Name
       value: UI Manager
