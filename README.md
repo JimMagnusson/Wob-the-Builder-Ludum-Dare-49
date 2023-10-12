@@ -1,4 +1,4 @@
-# Wob the Builder - Ludum Dare 50
+# Wob the Builder - Ludum Dare 49
 Ludum Dare 49 Jam entry: https://ldjam.com/events/ludum-dare/49/wob-the-wobbly-builder
 
 Made in 72 hours
